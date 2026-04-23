@@ -1,8 +1,7 @@
 # Contact Book CLI App — Python
-A command line contact management application with persistent storage and security!!
+A command line contact management application with persistent storage.
 Features:
 
-Password protected access
 Add contacts with duplicate detection
 View contacts alphabetically with total count
 Search by name or phone number
