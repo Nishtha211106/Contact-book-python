@@ -23,4 +23,3 @@ How to run:
 
 Clone the repository
 Run python contact_book.py
-Set your password on first run
