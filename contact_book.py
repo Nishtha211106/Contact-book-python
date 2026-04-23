@@ -9,40 +9,6 @@
 # 7. Delete a contact
 # 8. Main menu
 
-import json
-import hashlib
-
-def hash_password(password):
-    return hashlib.sha256(password.encode()).hexdigest()
-
-def set_password():
-    password = input("Set a password for your contact book: ")
-    hashed = hash_password(password)
-    with open('password.json', 'w') as f:
-        json.dump({"password": hashed}, f)
-    print("Password set successfully!!")
-
-def check_password():
-    try:
-        with open('password.json', 'r') as f:
-            stored = json.load(f)
-        password = input("Enter password: ")
-        if hash_password(password) == stored["password"]:
-            return True
-        else:
-            print("Wrong password!!")
-            return False
-    except FileNotFoundError:
-        set_password()
-        return True
-
-def load_contacts():
-    try:
-        with open('contacts.json', 'r') as f:
-            return json.load(f)
-    except FileNotFoundError:
-        return []
-
 # Save contacts to JSON file
 def save_contacts(contacts):
     with open('contacts.json', 'w') as f:
